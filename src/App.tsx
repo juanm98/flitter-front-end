@@ -1,4 +1,4 @@
-// npm modules 
+// npm modules
 import { useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import CreatePost from './components/CreatePost/CreatePost'
+import EditPost from './components/EditPost/EditPost'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -29,38 +30,37 @@ import { ToastContainer } from 'react-toastify'
 
 function App(): JSX.Element {
   const navigate = useNavigate()
-  
+
   const [user, setUser] = useState<User | null>(authService.getUser())
   const [posts, setPosts] = useState<Post[]>([])
   const [offSet, setOffset] = useState<number>(0)
   const fetchProfiles = async (): Promise<void> => {
-      try {
-          const profileData: AllPosts = await postServices.getAllPosts(offSet, 10)
-          setPosts(profileData.posts)
-          setOffset(offSet + profileData.posts.length)
-      } catch (error) {
-          console.log(error)
-      }
+    try {
+      const profileData: AllPosts = await postServices.getAllPosts(offSet, 10)
+      setPosts(profileData.posts)
+      setOffset(offSet + profileData.posts.length)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const appendData = (post: Post) => {
-      if (user) {
-          const newPosts: Post[] = [{ ...post, user }, ...posts]
-          setPosts(newPosts)
-          setOffset(offSet + 1)
-      }
+    if (user) {
+      const newPosts: Post[] = [{ ...post, user }, ...posts]
+      setPosts(newPosts)
+      setOffset(offSet + 1)
+    }
   }
 
   const popPost = (postId: number) => {
-      const newPosts: Post[] = posts.filter((post) => post.id !== postId)
-      setPosts(newPosts)
-      setOffset(offSet - 1)
+    const newPosts: Post[] = posts.filter((post) => post.id !== postId)
+    setPosts(newPosts)
+    setOffset(offSet - 1)
   }
 
   useEffect((): void => {
-      fetchProfiles()
+    fetchProfiles()
   }, [])
-
   const handleLogout = (): void => {
     authService.logout()
     setUser(null)
@@ -77,19 +77,13 @@ function App(): JSX.Element {
       <ToastContainer />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
-        <Route
-          path="/signup"
-          element={<Signup handleAuthEvt={handleAuthEvt} />}
-        />
-        <Route
-          path="/login"
-          element={<Login handleAuthEvt={handleAuthEvt} />}
-        />
+        <Route path="/signup" element={<Signup handleAuthEvt={handleAuthEvt} />} />
+        <Route path="/login" element={<Login handleAuthEvt={handleAuthEvt} />} />
         <Route
           path="/profiles"
           element={
             <ProtectedRoute user={user}>
-              <Profiles />
+              <Profiles userId={user?.id} posts={posts} popPost={popPost} />
             </ProtectedRoute>
           }
         />

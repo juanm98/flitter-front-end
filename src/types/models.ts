@@ -5,18 +5,20 @@
 /* ---------===== auth models =====--------- */
 
 export interface Profile {
+  id: number;
+
   name: string;
   photo?: string;
-  id: number;
   createdAt: string;
   updatedAt: string;
 }
 
 export interface User {
+  id: number;
+
   name: string;
   email: string;
-  profile: { id: number };
-  id: number;
+  profile: { id: number; photo?: string };
   createdAt: string;
   updatedAt: string;
 }
@@ -30,11 +32,6 @@ export interface Post {
   userId: number;
   createdAt: string;
   updatedAt: string;
-}
-
-export interface AllPosts {
-  totalPosts: number;
-  posts: Post[];
 }
 
 export interface Comment {
@@ -53,6 +50,11 @@ export interface Comment {
 
   createdAt?: string;
   updatedAt?: string;
+}
+
+export interface AllPosts {
+  totalPosts: number;
+  posts: Post[];
 }
 
 export interface AllComments {

@@ -31,3 +31,9 @@ export interface CreatePostData {
   photo: File | null;
   desc: string;
 }
+
+export interface EditPostData {
+  title: string;
+  photo: File | null;
+  desc: string;
+}

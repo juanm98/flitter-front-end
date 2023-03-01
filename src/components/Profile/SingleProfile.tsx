@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, MouseEvent, ReactNode } from 'react'
 import './profile.css'
 import { Post } from '../../types/models'
 import { useNavigate } from 'react-router'
@@ -92,7 +92,8 @@ function SingleProfile({ post, userId, popPost }: SingleProfileProps): JSX.Eleme
         <div className="desc">{desc}</div>
       </a>
     </div>
-  );
+  )
 }
 
 export default SingleProfile
+

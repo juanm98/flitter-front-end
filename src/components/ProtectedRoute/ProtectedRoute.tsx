@@ -6,8 +6,8 @@ import { Navigate } from 'react-router-dom'
 import { User } from '../../types/models'
 
 interface ProtectedRouteProps {
-  user: User | null;
-  children: ReactNode;
+  user: User | null
+  children: ReactNode
 }
 
 const ProtectedRoute = (props: ProtectedRouteProps): JSX.Element => {

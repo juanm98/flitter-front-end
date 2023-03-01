@@ -6,7 +6,7 @@ import { createPost } from '../../services/postService'
 import { useNavigate } from 'react-router'
 export type CreatePostProps = {
     appendData: (post: Post) => void
-};
+}
 const CreatePost = ({ appendData }: CreatePostProps): JSX.Element => {
     const [post, setPost] = useState({
         title: '',
@@ -14,7 +14,7 @@ const CreatePost = ({ appendData }: CreatePostProps): JSX.Element => {
     })
     const navigate = useNavigate()
 
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
     const submitHandler = (e: FormEvent) => {
         e.preventDefault()
@@ -25,7 +25,7 @@ const CreatePost = ({ appendData }: CreatePostProps): JSX.Element => {
                 formData.append('photo', fileElement.files[0])
                 formData.append('title', post.title)
                 formData.append('desc', post.desc)
-                setLoading(true);
+                setLoading(true)
                 createPost(formData)
                     .then((res: Post) => {
                         appendData(res)
@@ -36,7 +36,7 @@ const CreatePost = ({ appendData }: CreatePostProps): JSX.Element => {
                         toast.error('Error creating post')
                         setError('Error creating profile')
                         setLoading(false)
-                    });
+                    })
             } else {
                 toast.error('please upload photo')
             }
@@ -44,11 +44,11 @@ const CreatePost = ({ appendData }: CreatePostProps): JSX.Element => {
 
         if (post.title.length && post.desc.length) {
         }
-    };
+    }
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setPost({ ...post, [e.target.name]: e.target.value })
         setError(null)
-    };
+    }
     return (
         <div className="createpostcontainer">
             <h2>Create Post</h2>

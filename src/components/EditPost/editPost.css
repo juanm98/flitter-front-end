@@ -1,0 +1,35 @@
+.editPostContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.editPostContainer form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.editPostContainer h2 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+.editPostContainer input {
+  margin-left: 10px;
+  height: 40px;
+}
+
+.form-group.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.editPostContainer textarea {
+  height: 10rem;
+}
+
+.editPostContainer form button {
+  width: 10rem;
+  cursor: pointer;
+}

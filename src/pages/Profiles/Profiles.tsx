@@ -1,37 +1,35 @@
 // npm packages
 import { useState, useEffect } from 'react'
-
+import { Route } from 'react-router'
+import SingleProfile from '../../components/Profile/SingleProfile'
+import ProtectedRoute from '../../components/ProtectedRoute/ProtectedRoute'
 
 // services
-import * as profileService from '../../services/profileService'
+import * as postServices from '../../services/postService'
 
 // types
-import { Profile } from '../../types/models'
+import { AllPosts, Post, Profile } from '../../types/models'
 
-const Profiles = (): JSX.Element => {
-  const [profiles, setProfiles] = useState<Profile[]>([])
+import './profileList.css'
 
-  useEffect((): void => {
-    const fetchProfiles = async (): Promise<void> => {
-      try {
-        const profileData: Profile[] = await profileService.getAllProfiles()
-        setProfiles(profileData)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    fetchProfiles()
-  }, [])
-
-  if(!profiles.length) return <p>No profiles yet</p>
+export type ProfilesType = {
+  posts: Post[]
+  userId: number | undefined
+  popPost: (id: number) => void
+}
+const Profiles = ({ posts, userId, popPost }: ProfilesType): JSX.Element => {
+  if (!posts.length) return <p>No profiles yet</p>
 
   return (
-    <>
-      <h1>Hello. This is a list of all the profiles.</h1>
-      {profiles.map((profile: Profile) =>
-        <p key={profile.id}>{profile.name}</p>
-      )}
-    </>
+    <div className="listContainer">
+      <div className="profileListing">
+        {posts.map((post: Post) => (
+          <div>
+            <SingleProfile popPost={popPost} userId={userId} post={post} />
+          </div>
+        ))}
+      </div>
+    </div>
   )
 }
 
