@@ -2,7 +2,7 @@ import React, { ChangeEvent, FormEvent, ReactElement, useState } from 'react'
 import { toast } from 'react-toastify'
 import { useNavigate, useLocation } from 'react-router'
 import './editPost.css'
-import { editPost } from '../../services/postService'
+import { editPost } from '../services/postService'
 const EditPost = (): JSX.Element => {
     const location = useLocation()
     const navigate = useNavigate()
