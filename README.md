@@ -57,7 +57,7 @@ The app's user interface is simple and intuitive, making it easy for users to na
 <h2>Credits 🙌</h2>
 <li>
 Check out the
-<a href="">Attributions</a>
+<a href="https://github.com/juanm98/flitter-front-end/blob/main/Assets.md">Attributions</a>
 </li>
 
 <br>
