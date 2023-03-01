@@ -1,12 +1,14 @@
 .singleProfile {
   display: flex;
-  border: 1px solid gray;
+  border: 1px solid rgb(0, 0, 0);
   flex-direction: column;
   position: relative;
   padding: 1rem;
   margin-bottom: 2rem;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
+  box-shadow: 10px 10px
 }
 
 .profileActions {
@@ -47,8 +49,9 @@
 .singleProfile .user {
   display: flex;
   position: absolute;
-  top: 10px;
+  top: 11px;
   left: 10px;
+  font-weight: 600;
 }
 
 .singleProfile .user img {
@@ -74,9 +77,19 @@
 
 .singleProfile .desc {
   padding: 1rem;
+  display: flex;
 }
 
 .imgContainer img {
   max-height: 100%;
   max-width: 100%;
+}
+
+span {
+  margin: 2px ;
+}
+
+div.title {
+  font-size: larger;
+  font-weight: 500;
 }
