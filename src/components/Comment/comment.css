@@ -34,6 +34,7 @@
 
 .userInfo .userImg {
   height: 30px;
+  border-radius: 16px;
 }
 .commentContent {
   font-size: 1.2rem;
