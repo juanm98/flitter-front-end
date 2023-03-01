@@ -3,3 +3,35 @@
   align-items: center;
   flex-direction: column;
 }
+
+.container input, textarea, select, button { 
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  margin: 7px px 14px 0px;
+}
+
+.container button {
+  color: white;
+  font-weight: 600;
+  margin: 21px 0px 0px 0px;
+  background: var(--primary);
+  background-color: #9238ff;
+  margin-right: 10px;
+}
+
+.container input {
+  border: 1px solid black;
+  width: 300px;
+  margin: 0 15px 
+}
+
+.container label {
+  margin: 7px 0px 14px 0px;
+}
+
+.container form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
