@@ -107,7 +107,7 @@ function CommentItem({ comment, userId, handleDelete }: CommentItemProps): JSX.E
                     onDelete()
                   }}
                 >
-                  Delete Post
+                  Delete Comment
                 </p>
               ) : (
                 '🚀 Deleting...'
