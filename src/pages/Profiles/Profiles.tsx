@@ -1,6 +1,7 @@
 // npm packages
 import { useState, useEffect } from 'react'
 
+
 // services
 import * as profileService from '../../services/profileService'
 
@@ -33,5 +34,5 @@ const Profiles = (): JSX.Element => {
     </>
   )
 }
- 
+
 export default Profiles
