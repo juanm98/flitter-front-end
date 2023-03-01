@@ -1,0 +1,78 @@
+.commentInput {
+  height: 20px;
+  padding: 10px;
+  border: 1px solid gray;
+  width: 300px;
+}
+
+.commentList {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.commentItem {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: relative;
+  width: 40%;
+}
+
+.userInfo .userName {
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+.commentItem .userInfo {
+  display: flex;
+  flex-direction: row;
+  font-weight: 500;
+}
+
+.userInfo .userImg {
+  height: 30px;
+}
+.commentContent {
+  font-size: 1.2rem;
+  margin-left: 1.5rem;
+}
+
+.commentActions {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+.commentActions .dots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+.commentActions .actions {
+  position: absolute;
+  background-color: rgb(223, 219, 219);
+  box-shadow: -5px 15px 20px rgba(0, 0, 0, 0.1);
+  top: 0;
+  width: 100px;
+  padding: 1rem;
+}
+.commentActions .actions p {
+  font-size: 13px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.commentActions .actions p a {
+  text-decoration: none;
+  color: #000;
+}
+
+.commentActions .dots span {
+  width: 10px;
+  height: 5px;
+  font-size: 25px;
+}

@@ -36,3 +36,26 @@ export interface AllPosts {
   totalPosts: number;
   posts: Post[];
 }
+
+export interface Comment {
+  id: number;
+  content: string;
+  user: {
+      name: string;
+      email: string;
+      id: number;
+      profile: {
+          photo?: string;
+      };
+  };
+  userId: number;
+  postId: number;
+
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+export interface AllComments {
+  totalComments: number;
+  comments: Comment[];
+}

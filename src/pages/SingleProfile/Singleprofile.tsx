@@ -8,11 +8,11 @@ import { getAllPosts, getSinglePost } from '../../services/postService'
 import { createComment, getComments, deleteComments } from '../../services/commentServices'
 import { toast } from 'react-toastify'
 export type SingleProfileProps = {
-    user: User | null;
+    user: User | null
     popPost: (postId: number) => void
-};
+}
 function SingleProfile({ user, popPost }: SingleProfileProps): JSX.Element {
-    console.log(user);
+    console.log(user)
     const { id } = useParams()
 
     const [post, setPost] = useState<Post | null>(null)
@@ -46,7 +46,7 @@ function SingleProfile({ user, popPost }: SingleProfileProps): JSX.Element {
                 toast.error('Couldnot fetch comments')
             }
         }
-    };
+    }
 
     const addComment = async (comment: string) => {
         try {
@@ -63,22 +63,22 @@ function SingleProfile({ user, popPost }: SingleProfileProps): JSX.Element {
                         user: user,
                     },
                     ...comments,
-                ];
+                ]
                 setComments(newComments)
             }
         } catch (error) {}
-    };
+    }
 
     const handleDeleteComment = async (id: number) => {
         deleteComments(id).then(() => {
             const newComments: Comment[] = comments.filter((comment) => comment.id != id)
             setComments(newComments)
-        });
-    };
+        })
+    }
 
     useEffect(() => {
         fetchPost().then((res) => {
-            fetchComments().then((res) => {});
+            fetchComments().then((res) => {})
         })
     }, [])
 

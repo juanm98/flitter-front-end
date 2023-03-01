@@ -7,7 +7,7 @@ export type SingleProfileProps = {
   post: Post
   userId: number | undefined
   popPost: (id: number) => void
-};
+}
 function SingleProfile({ post, userId, popPost }: SingleProfileProps): JSX.Element {
   const { id, title, desc, photo, user } = post
   const [deleting, setDeleting] = useState(false)
@@ -27,18 +27,18 @@ function SingleProfile({ post, userId, popPost }: SingleProfileProps): JSX.Eleme
         .catch((err) => {
           console.log(err)
           setDeleting(false)
-        });
+        })
     } catch (err) { }
-  };
+  }
   useEffect(() => {
     window.addEventListener('click', (e) => {
-      const actions = document.querySelector('.profileActions');
+      const actions = document.querySelector('.profileActions')
 
       if (!actions?.contains(e.target as Node)) {
-        setActionVisible(false);
+        setActionVisible(false)
       }
-    });
-  }, []);
+    })
+  }, [])
 
   return (
     <div className="singleProfile">
@@ -49,7 +49,7 @@ function SingleProfile({ post, userId, popPost }: SingleProfileProps): JSX.Eleme
             onClick={() => {
               setTimeout(() => {
                 setActionVisible(true)
-              }, 100);
+              }, 100)
             }}
           >
             <span>.</span>
