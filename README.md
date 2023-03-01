@@ -64,6 +64,7 @@ Check out the
 
 <h2>Ice Box 🧊</h2>
 
+ - [ ] Be able to like posts. 
  - [ ] Animations. 
  - [ ] Dark mode.
  - [ ] Loading Screen.

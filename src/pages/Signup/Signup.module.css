@@ -16,7 +16,7 @@
   font-weight: 600;
   margin: 21px 14px 0px 0px;
   background: var(--primary);
-  background-color: #9238ff;
+  background-color: rgb(7, 131, 255);
 }
 
 .container input {
