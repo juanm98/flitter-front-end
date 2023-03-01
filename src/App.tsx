@@ -63,10 +63,34 @@ function App(): JSX.Element {
           }
         />
         <Route
+          path="/profiles/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <SingleProfile user={user} popPost={popPost} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
           path="/change-password"
           element={
             <ProtectedRoute user={user}>
               <ChangePassword handleAuthEvt={handleAuthEvt} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/create-post"
+          element={
+            <ProtectedRoute user={user}>
+              <CreatePost appendData={appendData} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/edit-post/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <EditPost />
             </ProtectedRoute>
           }
         />
