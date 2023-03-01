@@ -2,7 +2,7 @@
 <h1>Flitter!</h1>
 
 
-<img src="https://i.imgur.com/4oTCAop.png" alt="restful-rooms">
+<img src="https://i.imgur.com/U92IOXl.png" alt="restful-rooms">
 
 <p>
 <em>Flitter</em> Flitter is a social media application that allows users to share their thoughts, opinions, and updates with their followers. With Flitter, users can create profiles and engage with their posts by liking and commenting.
