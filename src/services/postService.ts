@@ -29,8 +29,24 @@ async function getSinglePost(id: number): Promise<Post> {
     }
 }
 
+async function createPost(postData: FormData): Promise<Post> {
+  try {
+      const res = await fetch(`${BASE_URL}`, {
+          method: 'POST',
+          headers: {
+              Authorization: `Bearer ${tokenService.getToken()}`,
+          },
+          body: postData,
+      });
+      return (await res.json()) as Post;
+  } catch (err) {
+      throw new Error('Error creating post');
+  }
+}
+
 
 export { 
   getAllPosts, 
-  getSinglePost  
+  getSinglePost,
+  createPost  
 }

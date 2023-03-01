@@ -8,6 +8,8 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import CreatePost from './components/CreatePost/CreatePost'
+import { Post } from './types/models'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -15,6 +17,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as postServices from './services/postService'
 
 // stylesheets
 import './App.css'
@@ -26,6 +29,7 @@ function App(): JSX.Element {
   const navigate = useNavigate()
   
   const [user, setUser] = useState<User | null>(authService.getUser())
+  const [posts, setPosts] = useState<Post[]>([])
 
   const handleLogout = (): void => {
     authService.logout()

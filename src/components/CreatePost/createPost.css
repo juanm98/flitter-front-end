@@ -1,0 +1,31 @@
+.createpostcontainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.createpostcontainer form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.createpostcontainer h2 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+.createpostcontainer input {
+  margin-left: 10px;
+  height: 40px;
+}
+
+.form-group.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.createpostcontainer form button {
+  width: 10rem;
+  cursor: pointer;
+}
