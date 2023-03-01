@@ -11,7 +11,7 @@ async function getAllPosts(offset: number, limit: number): Promise<AllPosts> {
     try {
         const res = await fetch(`${BASE_URL}/?offset=${offset}&limit=${limit}`, {
             headers: { Authorization: `Bearer ${tokenService.getToken()}` },
-        });
+        })
         return (await res.json()) as AllPosts
     } catch (error) {
         throw error
@@ -37,7 +37,7 @@ async function createPost(postData: FormData): Promise<Post> {
                 Authorization: `Bearer ${tokenService.getToken()}`,
             },
             body: postData,
-        });
+        })
         return (await res.json()) as Post
     } catch (err) {
         throw new Error('Error creating post')
@@ -52,7 +52,7 @@ async function editPost(editData: FormData): Promise<Post | PostMiscReturn> {
                 Authorization: `Bearer ${tokenService.getToken()}`,
             },
             body: editData,
-        });
+        })
         return (await res.json()) as Post
     } catch (err) {
         const error = {

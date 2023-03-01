@@ -30,7 +30,7 @@ function SingleProfile({ user, popPost }: SingleProfileProps): JSX.Element {
                 redirect('/')
             }
         }
-    };
+    }
 
     const fetchComments = async () => {
         if (id) {
@@ -39,7 +39,7 @@ function SingleProfile({ user, popPost }: SingleProfileProps): JSX.Element {
                 setTotalComments(fetchedComments.totalComments)
                 if (comments.length < fetchedComments.totalComments) {
                     const newSetOfComments = comments.concat(fetchedComments.comments)
-                    setComments(newSetOfComments);
+                    setComments(newSetOfComments)
                 }
             } catch (err) {
                 console.log(err)

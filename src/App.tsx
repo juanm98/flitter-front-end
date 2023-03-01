@@ -41,7 +41,7 @@ function App(): JSX.Element {
       } catch (error) {
           console.log(error)
       }
-  };
+  }
 
   const appendData = (post: Post) => {
       if (user) {
@@ -49,7 +49,7 @@ function App(): JSX.Element {
           setPosts(newPosts)
           setOffset(offSet + 1)
       }
-  };
+  }
 
   const popPost = (postId: number) => {
       const newPosts: Post[] = posts.filter((post) => post.id !== postId)
