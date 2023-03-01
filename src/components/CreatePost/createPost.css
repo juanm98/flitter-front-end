@@ -11,21 +11,42 @@
   flex-direction: column;
   gap: 1rem;
 }
+
 .createpostcontainer h2 {
   font-size: 3rem;
   font-weight: 400;
 }
+
 .createpostcontainer input {
   margin-left: 10px;
   height: 40px;
 }
 
-.form-group.col {
-  display: flex;
-  flex-direction: column;
-}
-
 .createpostcontainer form button {
   width: 10rem;
   cursor: pointer;
+}
+
+button {
+  color: white;
+  font-weight: 600;
+  margin: 21px 0px 0px 0px;
+  background: var(--primary);
+  background-color: #9238ff;
+  margin-right: 10px;
+}
+
+input { 
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  margin: 7px px 14px 0px;
+}
+
+label {
+  margin: 10px;
+}
+
+.form-photo {
+  margin: 20px 0 0 0
 }

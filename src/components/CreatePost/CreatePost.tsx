@@ -58,9 +58,9 @@ const CreatePost = ({ appendData }: CreatePostProps): JSX.Element => {
                     <label htmlFor="title">Title</label>
                     <input onChange={changeHandler} type="text" name="title" id="title" required />
                 </div>
-                <div className="form-group">
+                <div  className="form-photo">
                     <label htmlFor="photo">Add photo:</label>
-                    <input onChange={changeHandler} required type="file" name="photo" id="photo" />
+                    <input  onChange={changeHandler} required type="file" name="photo" id="photo"/>
                 </div>
                 <div className="form-group col">
                     <label htmlFor="desc">Description</label>
