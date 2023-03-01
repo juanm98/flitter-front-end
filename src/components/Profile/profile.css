@@ -1,0 +1,81 @@
+.singleProfile {
+  display: flex;
+  border: 1px solid gray;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileActions {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+.profileActions .dots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+.profileActions .actions {
+  position: absolute;
+  background-color: rgb(223, 219, 219);
+  box-shadow: -5px 15px 20px rgba(0, 0, 0, 0.1);
+  top: 0;
+  width: 100px;
+  padding: 1rem;
+}
+.profileActions .actions p {
+  font-size: 16px;
+  text-decoration: none;
+}
+.profileActions .actions p a {
+  text-decoration: none;
+  color: #000;
+}
+
+.profileActions .dots span {
+  width: 10px;
+  height: 5px;
+  font-size: 25px;
+}
+.singleProfile .user {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.singleProfile .user img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.singleProfile .post {
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+.singleProfile .post .imgContainer {
+  width: 100%;
+  height: 300px;
+  margin-top: 10px;
+  object-fit: scale-down;
+}
+
+.singleProfile .desc {
+  padding: 1rem;
+}
+
+.imgContainer img {
+  max-height: 100%;
+  max-width: 100%;
+}
