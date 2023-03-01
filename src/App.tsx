@@ -24,6 +24,7 @@ import './App.css'
 
 // types
 import { User } from './types/models'
+import { ToastContainer } from 'react-toastify';
 
 function App(): JSX.Element {
   const navigate = useNavigate()
@@ -44,6 +45,7 @@ function App(): JSX.Element {
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
