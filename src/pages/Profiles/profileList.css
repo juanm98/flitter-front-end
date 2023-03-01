@@ -1,0 +1,12 @@
+.listContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+}
+
+.profileListing {
+  max-width: 600px;
+}
