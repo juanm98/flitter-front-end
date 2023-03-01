@@ -1,0 +1,30 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .logo {
+  font-size: 1.3rem;
+}
+.container {
+  margin: 0 2rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+
+  flex-direction: row;
+}
+
+nav ul li {
+  list-style-type: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(63, 65, 67);
+  font-weight: 400;
+  font-size: 1.2rem;
+}
