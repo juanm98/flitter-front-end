@@ -59,7 +59,7 @@ async function editPost(editData: FormData): Promise<Post | PostMiscReturn> {
           type: 'error',
           message: "Couldn't edit post",
       };
-      return error;
+      return error
   }
 }
 
@@ -70,10 +70,10 @@ async function deletePost(id: number): Promise<PostMiscReturn> {
           headers: {
               Authorization: `Bearer ${tokenService.getToken()}`,
           },
-      });
-      return { type: 'success', message: 'Post deleted successfully' };
+      })
+      return { type: 'success', message: 'Post deleted successfully' }
   } catch (err) {
-      throw err;
+      throw err
   }
 }
 

@@ -5,17 +5,18 @@ import styles from './Landing.module.css'
 import { User } from '../../types/models'
 
 interface LandingProps {
-  user: User | null;
+    user: User | null
 }
 
 const Landing = (props: LandingProps): JSX.Element => {
-  const { user } = props
+    const { user } = props
 
-  return (
-    <main className={styles.container}>
-      <h1>hello, {user ? user.name : 'friend'}</h1>
-    </main>
-  )
+    return (
+        <main className={styles.container}>
+            <span className={styles.logo}>Flitter</span>
+            <p className={styles.desc}>Flit your thoughts and join the conversatin with Flitter.</p>
+        </main>
+    )
 }
 
 export default Landing
