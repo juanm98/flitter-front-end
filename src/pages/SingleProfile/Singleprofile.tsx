@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './singleProfile.css'
-import SingleProfileComponent from '../../components/Profile/SingleProfile'
+import SingleProfileComponent from '../../components/Profile/SingleProfile.tsx'
 import CommentComponent from '../../components/Comment/Comment'
 import { Post, Comment, AllComments, User } from '../../types/models'
 import { redirect, useParams } from 'react-router'
