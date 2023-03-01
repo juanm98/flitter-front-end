@@ -9,7 +9,6 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import CreatePost from './components/CreatePost/CreatePost'
-import { Post } from './types/models'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -18,19 +17,49 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 // services
 import * as authService from './services/authService'
 import * as postServices from './services/postService'
+import { useEffect } from 'react'
 
 // stylesheets
 import './App.css'
 
 // types
-import { User } from './types/models'
-import { ToastContainer } from 'react-toastify';
+import { User, Post, AllPosts } from './types/models'
+import SingleProfile from './pages/SingleProfile/Singleprofile'
+import { ToastContainer } from 'react-toastify'
 
 function App(): JSX.Element {
   const navigate = useNavigate()
   
   const [user, setUser] = useState<User | null>(authService.getUser())
   const [posts, setPosts] = useState<Post[]>([])
+  const [offSet, setOffset] = useState<number>(0)
+  const fetchProfiles = async (): Promise<void> => {
+      try {
+          const profileData: AllPosts = await postServices.getAllPosts(offSet, 10)
+          setPosts(profileData.posts)
+          setOffset(offSet + profileData.posts.length)
+      } catch (error) {
+          console.log(error)
+      }
+  };
+
+  const appendData = (post: Post) => {
+      if (user) {
+          const newPosts: Post[] = [{ ...post, user }, ...posts]
+          setPosts(newPosts)
+          setOffset(offSet + 1)
+      }
+  };
+
+  const popPost = (postId: number) => {
+      const newPosts: Post[] = posts.filter((post) => post.id !== postId)
+      setPosts(newPosts)
+      setOffset(offSet - 1)
+  }
+
+  useEffect((): void => {
+      fetchProfiles()
+  }, [])
 
   const handleLogout = (): void => {
     authService.logout()
