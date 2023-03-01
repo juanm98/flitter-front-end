@@ -6,15 +6,15 @@ import Logo from '../logo/Logo'
 import { User } from '../../types/models'
 
 interface NavBarProps {
-  user: User | null
-  handleLogout: () => void
+    user: User | null
+    handleLogout: () => void
 }
 
 const NavBar = (props: NavBarProps): JSX.Element => {
-  const { user, handleLogout } = props
-  
-  return (
-    <nav className="container">
+    const { user, handleLogout } = props
+
+    return (
+        <nav className="container">
             <Logo />
             {user ? (
                 <ul className="navlinks">
@@ -45,7 +45,7 @@ const NavBar = (props: NavBarProps): JSX.Element => {
                 </ul>
             )}
         </nav>
-  )
+    )
 }
 
 export default NavBar

@@ -18,7 +18,7 @@ async function getAllProfiles(): Promise<Profile[]> {
 }
 
 async function addPhoto(
-  photoData: FormData, 
+  photoData: FormData,
   profileId: number
 ): Promise<string> {
   try {

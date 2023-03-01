@@ -28,3 +28,7 @@ nav ul li a {
   font-weight: 400;
   font-size: 1.2rem;
 }
+
+a:hover {
+  color: black;
+}

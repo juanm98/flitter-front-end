@@ -38,12 +38,12 @@ export interface Comment {
   id: number;
   content: string;
   user: {
-      name: string;
-      email: string;
-      id: number;
-      profile: {
-          photo?: string;
-      };
+    name: string;
+    email: string;
+    id: number;
+    profile: {
+      photo?: string;
+    };
   };
   userId: number;
   postId: number;
