@@ -13,7 +13,7 @@ The app's user interface is simple and intuitive, making it easy for users to na
 <br>
 
 <h2>
-<a href="https://63ff7acbc4142e2f9f5f6cec--flitter-app.netlify.app/" rel="nofollow">Try the App!</a>
+<a href="https://flitter-app.netlify.app" rel="nofollow">Try the App!</a>
 </h2>
 
 <br>
